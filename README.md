@@ -6,7 +6,6 @@
 
 Bring your own model into the browser, with context assembly, typed tools, page execution, DOM verification, guardrails and reusable skills.
 
-[![CI](https://img.shields.io/github/actions/workflow/status/browser-agent/browser-agent/ci.yml?branch=main&label=CI)](../../actions)
 [![Version](https://img.shields.io/badge/version-0.0.1-black.svg)](packages/extension/package.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Chrome MV3](https://img.shields.io/badge/Chrome-Manifest%20V3-4285F4?logo=googlechrome&logoColor=white)](packages/extension)
@@ -172,7 +171,7 @@ If an endpoint does not support native tool calling, the runtime falls back to a
 ## Quick start
 
 ```bash
-git clone https://github.com/browser-agent/browser-agent.git
+git clone https://github.com/uiuing/browser-agent.git
 cd browser-agent
 pnpm install
 pnpm build

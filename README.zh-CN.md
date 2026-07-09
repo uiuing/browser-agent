@@ -6,7 +6,6 @@
 
 把模型接入真实网页，并提供上下文、工具、页面执行、结果验证、权限护栏和技能复用。
 
-[![CI](https://img.shields.io/github/actions/workflow/status/browser-agent/browser-agent/ci.yml?branch=main&label=CI)](../../actions)
 [![Version](https://img.shields.io/badge/version-0.0.1-black.svg)](packages/extension/package.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Chrome MV3](https://img.shields.io/badge/Chrome-Manifest%20V3-4285F4?logo=googlechrome&logoColor=white)](packages/extension)
@@ -172,7 +171,7 @@ export const readClipboard: ToolDefinition<{ trim?: boolean }> = {
 ## 快速开始
 
 ```bash
-git clone https://github.com/browser-agent/browser-agent.git
+git clone https://github.com/uiuing/browser-agent.git
 cd browser-agent
 pnpm install
 pnpm build

@@ -24,4 +24,4 @@ First public release.
 - Reproducible benchmark versus a deliberate replica of the viewport-agent architecture (`pnpm bench` → `docs/benchmark.md`).
 - Headless engine checks (`pnpm test:engine`), full-loop extension e2e on a scripted mock model (`pnpm test:e2e`), screenshot sweep (`pnpm shots`).
 
-[0.0.1]: https://github.com/browser-agent/browser-agent/releases/tag/v0.0.1
+[0.0.1]: https://github.com/uiuing/browser-agent/releases/tag/v0.0.1
