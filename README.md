@@ -51,19 +51,7 @@ A verified run can be extracted into a skill. Skill replay still verifies each s
 
 ## Architecture
 
-```mermaid
-flowchart TB
-  UI[Side panel UI] <--> Kernel["kernel/ · agent loop"]
-  Kernel --> Context["context/ · context assembly"]
-  Kernel <--> LLM["llm/ · model providers"]
-  Kernel --> Tools["tools/ · tool registry"]
-  Tools --> Guardrails["guardrails/ · risk and permission gate"]
-  Guardrails --> PageAct["page_act"]
-  PageAct --> Engine["engine/ · page runtime"]
-  Kernel --> Storage["storage/ · local repositories"]
-  Kernel --> Trace["trace/ · structured events"]
-  Engine --> Trace
-```
+![Browser Agent runtime architecture](assets/architecture-en.png)
 
 Main modules under `packages/extension/src/`:
 

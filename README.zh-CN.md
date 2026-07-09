@@ -51,19 +51,7 @@ Browser Agent 的设计目标不是让模型“看起来会操作网页”，而
 
 ## 架构
 
-```mermaid
-flowchart TB
-  UI[Side panel UI] <--> Kernel["kernel/ · agent loop"]
-  Kernel --> Context["context/ · context assembly"]
-  Kernel <--> LLM["llm/ · model providers"]
-  Kernel --> Tools["tools/ · tool registry"]
-  Tools --> Guardrails["guardrails/ · risk and permission gate"]
-  Guardrails --> PageAct["page_act"]
-  PageAct --> Engine["engine/ · page runtime"]
-  Kernel --> Storage["storage/ · local repositories"]
-  Kernel --> Trace["trace/ · structured events"]
-  Engine --> Trace
-```
+![Browser Agent 运行时架构](assets/architecture-zh.png)
 
 主要模块在 `packages/extension/src/`：
 
