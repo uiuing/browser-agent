@@ -1,0 +1,15 @@
+node_modules/
+.output/
+.wxt/
+dist/
+shots/
+internal/
+stats.html
+stats-*.json
+test-results/
+playwright-report/
+.pw-profile*/
+*.local
+.env
+.DS_Store
+Thumbs.db

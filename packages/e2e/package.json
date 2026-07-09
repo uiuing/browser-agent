@@ -1,0 +1,22 @@
+{
+  "name": "@browser-agent/e2e",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test:engine": "tsx src/engine-tests.ts",
+    "test:ext": "tsx src/ext-e2e.ts",
+    "test:real": "tsx src/real-llm.ts",
+    "test:sites": "tsx src/real-sites.ts",
+    "shots": "tsx src/shots.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.25.5",
+    "playwright": "^1.53.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "zod": "^4.0.5"
+  }
+}

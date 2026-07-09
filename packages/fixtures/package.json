@@ -1,0 +1,15 @@
+{
+  "name": "@browser-agent/fixtures",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 4173 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "serve": "vite preview --port 4173 --strictPort"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}

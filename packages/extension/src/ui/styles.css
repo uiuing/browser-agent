@@ -1,0 +1,191 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-muted-fg: var(--muted-fg);
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-verified: var(--verified);
+  --color-healing: var(--healing);
+  --color-failed: var(--failed);
+  --color-running: var(--running);
+  --color-skipped: var(--skipped);
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1rem;
+  --font-sans: 'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+}
+
+/*
+ * Black & white flat + frosted glass.
+ * Surfaces are translucent panels with hairline borders and backdrop-blur —
+ * no dual-direction shadows, no colored fills, no neumorphic extrusion.
+ * Hierarchy: solid page bg → glass panels → flat inset wells.
+ */
+:root {
+  --bg: #f2f2f2;
+  --card: rgba(255, 255, 255, 0.72);
+  --fg: #0a0a0a;
+  --muted: rgba(0, 0, 0, 0.05);
+  --muted-fg: #6b6b6b;
+  --primary: #0a0a0a;
+  --primary-fg: #fafafa;
+  --secondary: rgba(0, 0, 0, 0.05);
+  --accent: rgba(0, 0, 0, 0.07);
+  --border: rgba(0, 0, 0, 0.1);
+  --ring: #0a0a0a;
+  --destructive: #8a3a32;
+  --verified: #3d5c4a;
+  --healing: #7a6430;
+  --failed: #8a3a32;
+  --running: #4a5a6a;
+  --skipped: #7a7a7a;
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-strong: rgba(255, 255, 255, 0.88);
+  --inset: rgba(0, 0, 0, 0.04);
+  --scrim: rgba(0, 0, 0, 0.35);
+}
+
+.dark {
+  --bg: #0c0c0c;
+  --card: rgba(255, 255, 255, 0.06);
+  --fg: #f2f2f2;
+  --muted: rgba(255, 255, 255, 0.06);
+  --muted-fg: #9a9a9a;
+  --primary: #f2f2f2;
+  --primary-fg: #0a0a0a;
+  --secondary: rgba(255, 255, 255, 0.06);
+  --accent: rgba(255, 255, 255, 0.09);
+  --border: rgba(255, 255, 255, 0.12);
+  --ring: #f2f2f2;
+  --destructive: #c08079;
+  --verified: #85ad93;
+  --healing: #bfa66c;
+  --failed: #c08079;
+  --running: #8da2b4;
+  --skipped: #86868e;
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-strong: rgba(255, 255, 255, 0.1);
+  --inset: rgba(255, 255, 255, 0.04);
+  --scrim: rgba(0, 0, 0, 0.55);
+}
+
+/* ---- flat glass / inset utilities ---- */
+@utility glass {
+  background: var(--glass);
+  backdrop-filter: blur(16px) saturate(1.15);
+  -webkit-backdrop-filter: blur(16px) saturate(1.15);
+  border: 1px solid var(--border);
+}
+@utility glass-strong {
+  background: var(--glass-strong);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+  border: 1px solid var(--border);
+}
+@utility glass-sm {
+  background: var(--glass);
+  backdrop-filter: blur(10px) saturate(1.1);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  border: 1px solid var(--border);
+}
+@utility inset {
+  background: var(--inset);
+  border: 1px solid var(--border);
+}
+@utility flat {
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--muted-fg) 35%, transparent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--muted-fg) 55%, transparent);
+}
+
+@keyframes pf-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pf-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pf-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.pf-fade-up {
+  animation: pf-fade-up 0.14s ease-out;
+}
+.pf-pop {
+  animation: pf-pop 0.24s ease-out;
+}
+.pf-spin {
+  animation: pf-spin 0.7s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}

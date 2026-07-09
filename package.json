@@ -1,0 +1,22 @@
+{
+  "name": "browser-agent",
+  "private": true,
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.29.1",
+  "scripts": {
+    "build": "pnpm --filter @browser-agent/fixtures build && pnpm --filter @browser-agent/extension build && pnpm --filter @browser-agent/bench typecheck && pnpm --filter @browser-agent/e2e typecheck",
+    "dev:ext": "pnpm --filter @browser-agent/extension dev",
+    "dev:fixtures": "pnpm --filter @browser-agent/fixtures dev",
+    "fixtures": "pnpm --filter @browser-agent/fixtures serve",
+    "test": "pnpm test:engine",
+    "test:engine": "pnpm --filter @browser-agent/e2e test:engine",
+    "test:e2e": "pnpm --filter @browser-agent/e2e test:ext",
+    "shots": "pnpm --filter @browser-agent/e2e shots",
+    "bench": "pnpm --filter @browser-agent/bench run bench"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
